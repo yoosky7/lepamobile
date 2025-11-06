@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, minimum-scale=0.9, user-scalable=no">
+    <title>르 파빌리온 풀빌라 모바일</title>
+    <link rel="stylesheet" href="../CSS/reser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <div class="phone-wrapper">
+        <div class="phone-frame">
+            <div class="screen">
+                <div class="status-wrapper">
+                    <div class="circle"></div>
+                    <div class="status-bar">
+                        <div class="status-left">
+                            <span class="logo">U+</span>
+                            <span class="time">12:42</span>
+                        </div>
+                        <div class="status-right">
+                            <span class="icon">🔇</span>
+                            <span class="icon">5G</span>
+                            <span class="icon">📡</span>
+                            <span class="icon">📶</span>
+                            <span class="icon">🔋 94%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="te">
+                    <a href="index.html">
+                        <p>←</p>
+                    </a>
+                    <h3>#예약안내 RESERVATION</h3>
+                </div>
+                <section>
+                    <div class="reservation">
+                      <div class="sub-reservation">
+                        <div class="cell-reservation">
+                          <i class="fa-solid fa-phone"></i><h3>전화 예약</h3>
+                        </div>
+                        <div class="time-reservation">
+                          <a href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=100561"><i class="fa-solid fa-clock"></i><h3>실시간 예약</h3></a>
+                        </div>
+                      </div>
+                    </div>
+                    <table border="1" class="Room-rate-table">
+                      <tr>
+                        <th>객실</th>
+                        <th>인원</th>
+                        <th>시즌</th>
+                        <th>주중</th>
+                        <th>금요일</th>
+                        <th>토요일</th>
+                      </tr>
+                      <tr>
+                        <td rowspan="3">씨엘</td>
+                        <td rowspan="3">2 ~ 6</td>
+                        <td>비수기</td>
+                        <td>280,000</td>
+                        <td>280,000</td>
+                        <td>380,000</td>
+                      </tr>
+                      <tr>
+                        <td>준성수기</td>
+                        <td>350,000</td>
+                        <td>420,000</td>
+                        <td>420,000</td>
+                      </tr>
+                      <tr>
+                        <td>성수기</td>
+                        <td>450,000</td>
+                        <td>480,000</td>
+                        <td>500,000</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="3">루카 <br> 로제 <br> 루나</td>
+                        <td rowspan="3">2 ~ 6</td>
+                        <td>비수기</td>
+                        <td>350,000</td>
+                        <td>450,000</td>
+                        <td>450,000</td>
+                      </tr>
+                      <tr>
+                        <td>준성수기</td>
+                        <td>450,000</td>
+                        <td>550,000</td>
+                        <td>550,000</td>
+                      </tr>
+                      <tr>
+                        <td>성수기</td>
+                        <td>600,000</td>
+                        <td>600,000</td>
+                        <td>600,000</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="3">포레</td>
+                        <td rowspan="3">2 ~ 8</td>
+                        <td>비수기</td>
+                        <td>250,000</td>
+                        <td>350,000</td>
+                        <td>350,000</td>
+                      </tr>
+                      <tr>
+                        <td>준성수기</td>
+                        <td>350,000</td>
+                        <td>450,000</td>
+                        <td>450,000</td>
+                      </tr>
+                      <tr>
+                        <td>성수기</td>
+                        <td>500,000</td>
+                        <td>500,000</td>
+                        <td>500,000</td>
+                      </tr>
+                    </table>
+                    <div class="accordion">
+                      <div class="accordion-item">
+                        <div class="accordion-header">
+                          <span>취소 규칙</span>
+                          <span class="arrow">∨</span>
+                        </div>
+                        <div class="accordion-content">
+                          예약 취소는 가능하지만 이용일기준 <br>당일 ~ 14일  각각 수수료가 붙습니다.
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <div class="accordion-header">
+                          <span>추가 안팎</span>
+                          <span class="arrow">∨</span>
+                        </div>
+                        <div class="accordion-content">
+                          입금 시 예약자와 입금자명이 다를 경우<br> 필히 확인 전화 주십시오.<br>
+                          이용당일 15:00 ~ 22:00 까지입니다. <br>(얼리 체크인, 레이트 체크아웃 불가합니다.) <br>
+                          기준 인원 초과 시 추가 요금이 발생하며, <br>최대 인원은 6명까지입니다.<br>
+                          마지막 이용일 오전11시까지입니다.<br>
+                          객실정리 후 퇴실점검을 받으셔야 합니다.<br>
+                          오후 11시 이후의 바베큐장 이용 및 고성방가는 <br>타 객실손님을 하지말아주세요.<br>
+                        </div>
+                      </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll(".accordion-header").forEach(header => {
+        header.addEventListener("click", () => {
+            const item = header.parentElement;
+            item.classList.toggle("active");
+        });
+    });
+
+    </script>
+</body>
+</html>
