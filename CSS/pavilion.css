@@ -10,26 +10,30 @@ body {
   background-color: #f9f9f9;
 }
 
-/* 전체 레이아웃 */
+html, body {
+  height: 100%;
+  overflow: hidden; /* 전체 스크롤 막기 */
+}
+
 .phone-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  align-items: flex-start; /* 위쪽에 붙이기 */
+  height: 100vh; /* 브라우저 높이에 딱 맞춤 */
+  margin-top: 0; /* 위 여백 제거 */
 }
-
+/* 핸드폰 프레임 */
 .phone-frame {
   position: relative;
-  width: 360px; /* 기존 크기 유지 */
-  height: 740px;
-  margin: 50px auto;
-  border: 10px solid #333;
+  width: 442px;
+  height: 947px;
+  border: 16px solid #333;
   border-radius: 40px;
-  background-color: #000;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-
-  /* 👇 추가 */
-  transform: scale(0.8);
-  transform-origin: top center; /* 화면 위쪽을 기준으로 축소 */
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  background: #000;
+  margin:  0 auto;
+  transform: scale(0.9);
+  transform-origin: top center; /* 위쪽 기준으로 줄이기 */
 }
 .screen {
   position: absolute;
@@ -447,3 +451,4 @@ body {
   line-height: 1.4;
 
 }
+
