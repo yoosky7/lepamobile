@@ -1,0 +1,444 @@
+/* 기본 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* 전체 레이아웃 */
+.phone-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* 핸드폰 프레임 */
+.phone-frame {
+  position: relative;
+  width: 442px;
+  height: 947px;
+  border: 16px solid #333;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  background: #000;
+}
+.screen {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 80px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.screen::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.screen::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 234px; /* 원하는 높이만큼 */
+  background-color: #9AD2B6; /* 윗부분 색상 */
+  z-index: 0;
+}
+.status-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #9AD2B6;
+  z-index: 200; /* 맨 위로 */
+  border-radius: 24px 24px 0 0;
+  padding: 6px 0;
+}
+.circle {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* 상태바 스타일 */
+.status-bar {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 14px;
+  color: #000000;
+  border-radius: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.status-left,
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.icon {
+  font-size: 14px;
+}
+
+.screen .te {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  right: 20px;
+  height: 60px;
+}
+
+.screen .te h3{
+  position: absolute;
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  font-style: italic;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.screen .te i {
+  position: absolute;
+  top: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.screen .te .fa-bullhorn {
+  right: 30px;
+}
+
+.screen .te .fa-calendar {
+  right: 0;
+}
+
+.screen .te p{
+  position: absolute;
+  left: 0;
+  top: 30px;
+  font-size: 17px;
+}
+
+.screen .Search {
+  position: absolute;
+  top: 180px;
+  left: 20px;
+  width: 380px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 텍스트 스타일 */
+.screen .Search p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 아이콘 스타일 */
+.screen .Search i {
+  font-size: 16px;
+  color: #666;
+}
+
+/* 입력창 스타일 (선택사항) */
+.screen .Search input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  flex: 1;
+  background: transparent;
+  color: #333;
+}
+.url-bar {
+  position: relative;
+  bottom: 0;
+  width: 90%;
+  height: 28px;
+  background-color: #f0f0f0;
+  opacity: 0.9;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 140px auto 0 auto; /* 여백 제거 + 살짝 하단 겹치게 */
+}
+
+.url-bar a {
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+}
+/* 핸드폰 오른쪽 버튼 */
+.side-button {
+  position: absolute;
+  top: 12%;
+  right: -20px; /* 테두리 바깥으로 살짝 튀어나오게 */
+  transform: translateY(-50%);
+  width: 8px;
+  height: 60px;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.side-button2 {
+  position: absolute;
+  top: 19%;
+  right: -20px; /* 테두리 바깥으로 살짝 튀어나오게 */
+  transform: translateY(-50%);
+  width: 8px;
+  height: 60px;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.side-button3 {
+  position: absolute;
+  top: 32%;
+  right: -20px; /* 테두리 바깥으로 살짝 튀어나오게 */
+  transform: translateY(-50%);
+  width: 8px;
+  height: 60px;
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.container {
+  position: relative;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 900px;
+  overflow-x: hidden; /* 가로만 숨김 */
+  overflow-y: visible; /* 세로는 보이게 설정 */
+  padding-bottom: 80px; /* url-bar 영역 확보 */
+}
+
+.best-te {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.best-te h2 {
+  margin-left: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.best-te a {
+  color: #024222;
+  font-size: 12px;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.card-slider {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  align-items: center;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.card.active {
+  left: 0;
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+.card img {
+  width: 132px;
+  height: 132px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.card-text {
+  flex: 1;
+  position: relative;
+}
+
+    .card-text h3 {
+      font-size: 14px;
+      margin: 0 0 8px;
+      color: #333;
+    }
+
+    .card-text p {
+      position: absolute;
+      left: 0px;
+      top: 20px;
+      font-size: 8px;
+      color: #555;
+    }
+
+    .rating {
+      display: inline-block;
+      margin-top: 25px;
+      font-weight: bold;
+      color: #f39c12;
+      font-size: 6px;
+    }
+
+.room-list {
+  position: relative;
+}
+
+/* ROOM 영역 드래그 중 선택 방지 */
+.room-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+  cursor: grab;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  user-select: none; /* 텍스트 선택 방지 */
+  padding-bottom: 40px;
+}
+.room-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* 드래그 중 커서 변경 */
+.room-grid.active {
+  cursor: grabbing;
+}
+
+/* 부드럽게 넘기기 위한 스냅 기능 */
+.room-grid {
+  scroll-snap-type: x mandatory;
+}
+
+.room-card {
+  flex: 0 0 auto;
+  width: 160px;
+  scroll-snap-align: start;
+  text-align: center;
+  display: flex;              /* 추가 */
+  flex-direction: column;     /* 세로로 배치 */
+  align-items: center;        /* 가운데 정렬 */
+}
+
+.room-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  pointer-events: none; /* 이미지 클릭 방지 */
+  -webkit-user-drag: none; /* 드래그 방지 */
+}
+
+.room-card p {
+  position: static;
+  margin-top: 10px;   
+  font-size: 10px;  
+  line-height: 1.6; 
+  color: #333; 
+  white-space: pre-line;
+  text-align: left;
+}
+
+.room-card .tag{
+  position: static;
+  margin-top: 5px;
+  font-size: 7px;
+  line-height: 1.6;
+  color: #5a5a5a;
+  white-space: pre-line;
+  text-align: left;
+}
+
+.special-card {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.special-card img{
+  display: block;
+  width: 350px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.special-text {
+  position: absolute;
+  top: 10px;
+  right: calc(10% + 10px);
+  z-index: 10;
+  text-align: right;
+}
+
+.special-text h3{
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #1d1d1d;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.special-text p {
+  position: static;
+  font-size: 10px;
+  color: #5a5a5a;
+  margin: 0;
+  line-height: 1.4;
+}
