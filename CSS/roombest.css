@@ -1,0 +1,202 @@
+/* 기본 초기화 */
+*{margin:0; padding:0; box-sizing:border-box;}
+/* === 공통 레이아웃 (index / pavilion.css 기준) === */
+
+/* 전체 스크롤 막고 높이 맞추기 */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 기본 바디 */
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* 핸드폰 전체 래퍼 */
+.phone-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;   /* 위에 딱 붙게 */
+  height: 100vh;             /* 화면 높이에 맞춤 */
+  margin-top: 0;             /* 여백 제거 */
+}
+
+/* 핸드폰 프레임 */
+.phone-frame {
+  position: relative;
+  width: 442px;
+  height: 947px;
+  border: 16px solid #333;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  background: #000;
+  margin: 0 auto;
+  transform: scale(0.9);          /* index랑 똑같이 축소 */
+  transform-origin: top center;   /* 위 기준으로 줄이기 */
+}
+
+/* 실제 화면 영역 */
+.screen {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 80px;      /* status-bar + 타이틀 자리 */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.screen::-webkit-scrollbar {
+  display: none;
+}
+
+/* 상단 초록 배경 */
+.screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background-color: #9AD2B6;
+  z-index: 0;
+}
+
+/* 상태바 */
+.status-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #9AD2B6;
+  z-index: 200;
+  border-radius: 24px 24px 0 0;
+  padding: 6px 0;
+}
+
+.circle {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.status-bar {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 14px;
+  color: #000000;
+  border-radius: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+
+.status-left,
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.icon {
+  font-size: 14px;
+}
+
+/* 페이지 공통 상단 타이틀 위치 (← + h3) */
+.screen .te {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  right: 20px;
+  height: 60px;
+}
+
+.screen .te h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.screen .te a {
+  color: #000;
+  text-decoration: none;
+}
+
+.screen .te p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* BEST 리뷰 섹션 */
+.best-sec{
+  position:relative;
+  top:90px;
+  padding:20px;
+}
+
+/* 카드 */
+.best-card{
+  display:flex;
+  gap:16px;
+  background:#fff;
+  padding:16px;
+  border-radius:16px;
+  margin-bottom:20px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.best-card img{
+  width:120px;
+  height:120px;
+  border-radius:999px;
+  object-fit:cover;
+}
+
+.best-text h3{
+  margin:0 0 8px;
+  font-size:14px;
+  color:#333;
+}
+
+.best-text p{
+  margin:0;
+  font-size:10px;
+  color:#555;
+  line-height:1.4;
+}
+
+.rating{
+  display:inline-block;
+  margin-top:10px;
+  font-size:10px;
+  font-weight:bold;
+  color:#f39c12;
+}
